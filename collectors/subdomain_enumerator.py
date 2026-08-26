@@ -1,13 +1,15 @@
-"""Enumerate common subdomains with DNS-only lookups."""
+"""Enumerate common subdomains with DNS-only lookups and wildcard detection."""
 
 import json
 import secrets
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import dns.exception
 import dns.resolver
 
+from collectors.domain_utils import normalize_domain
 
 WORDLIST = (
     "www mail ftp admin api dev test staging portal vpn remote git jenkins wp blog shop app dashboard cpanel webmail mx ns smtp pop imap webdisk whm cpcalendars cpcontacts autodiscover autoconfig m mobile old new beta alpha demo sandbox internal intranet secure private public files docs drive cloud storage backup db database sql mongo redis elastic kafka rabbitmq graphql rest soap ws websocket socket io wss mqtt coap grpc thrift"
@@ -15,12 +17,12 @@ WORDLIST = (
 PUBLIC_RESOLVERS = ("8.8.8.8", "1.1.1.1")
 
 
-def _resolver():
-    resolver = dns.resolver.Resolver(configure=False)
-    resolver.nameservers = list(PUBLIC_RESOLVERS)
-    resolver.timeout = 1.5
-    resolver.lifetime = 3.0
-    return resolver
+def _resolver(resolver_ip=None):
+    res = dns.resolver.Resolver(configure=False)
+    res.nameservers = [resolver_ip] if resolver_ip else list(PUBLIC_RESOLVERS)
+    res.timeout = 1.5
+    res.lifetime = 3.0
+    return res
 
 
 def _lookup(resolver, name, record_type):
@@ -33,17 +35,17 @@ def _lookup(resolver, name, record_type):
     return []
 
 
-def enumerate_domain(domain, delay=0.5):
-    domain = str(domain).strip().lower().removeprefix("*.").rstrip(".")
-    resolver = _resolver()
+def enumerate_domain(domain, delay=0.2, resolver_instance=None):
+    domain = normalize_domain(domain)
+    res = resolver_instance or _resolver()
     wildcard_name = f"wildcard-{secrets.token_hex(8)}.{domain}"
-    wildcard_addresses = _lookup(resolver, wildcard_name, "A") + _lookup(resolver, wildcard_name, "AAAA")
+    wildcard_addresses = _lookup(res, wildcard_name, "A") + _lookup(res, wildcard_name, "AAAA")
     time.sleep(delay)
     records = []
     for label in WORDLIST:
         subdomain = f"{label}.{domain}"
         for record_type in ("A", "AAAA"):
-            addresses = _lookup(resolver, subdomain, record_type)
+            addresses = _lookup(res, subdomain, record_type)
             if addresses:
                 records.extend({
                     "subdomain": subdomain,
@@ -57,12 +59,22 @@ def enumerate_domain(domain, delay=0.5):
         "wildcard_enabled": bool(wildcard_addresses),
         "wildcard_addresses": wildcard_addresses,
         "records": records,
+        "enumerated_at": datetime.now(timezone.utc).isoformat(),
     }
 
 
-def enumerate_domains(domains, delay=0.5):
-    unique_domains = sorted({str(domain).strip().lower().removeprefix("*.").rstrip(".") for domain in domains or [] if domain})
-    return [enumerate_domain(domain, delay=delay) for domain in unique_domains]
+def enumerate_domains(domains, delay=0.2, resolver_instance=None):
+    results = []
+    seen = set()
+    for item in domains or []:
+        try:
+            d = normalize_domain(item)
+            if d not in seen:
+                seen.add(d)
+                results.append(enumerate_domain(d, delay=delay, resolver_instance=resolver_instance))
+        except ValueError:
+            continue
+    return results
 
 
 def save_subdomain_data(results, country_code, output_dir="data/subdomains"):
@@ -75,20 +87,9 @@ def save_subdomain_data(results, country_code, output_dir="data/subdomains"):
 
 
 def save_target_subdomain_data(results, domain, output_dir="data/targets"):
-    path = Path(output_dir) / domain
+    path = Path(output_dir) / normalize_domain(domain)
     path.mkdir(parents=True, exist_ok=True)
     output_path = path / "subdomains.json"
     with output_path.open("w", encoding="utf-8") as stream:
         json.dump(results, stream, indent=2)
     return output_path
-
-
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--country", required=True)
-    args = parser.parse_args()
-    source = Path("data/crtsh") / f"{args.country.lower()}_domains.json"
-    with source.open(encoding="utf-8") as stream:
-        domains = json.load(stream)
-    save_subdomain_data(enumerate_domains(domains), args.country)

@@ -1,0 +1,125 @@
+{
+  "n": 30,
+  "overall": {
+    "spf_adoption_rate": 0.8667,
+    "dmarc_adoption_rate": 0.7333,
+    "dmarc_enforcement_rate": 0.6,
+    "high_priority_rate": 0.2667,
+    "mean_subdomains": 13.27,
+    "mean_discovered_ips": 10.27
+  },
+  "by_country": {
+    "egypt": {
+      "n": 5,
+      "mean_subdomains": 5.6,
+      "mean_discovered_ips": 5.6,
+      "spf_rate": 0.8,
+      "dmarc_rate": 0.8,
+      "dmarc_enforcement_rate": 0.8,
+      "high_priority_rate": 0.2,
+      "mean_asset_coverage": null
+    },
+    "ghana": {
+      "n": 5,
+      "mean_subdomains": 32.8,
+      "mean_discovered_ips": 18.6,
+      "spf_rate": 0.6,
+      "dmarc_rate": 0.4,
+      "dmarc_enforcement_rate": 0.2,
+      "high_priority_rate": 0.6,
+      "mean_asset_coverage": null
+    },
+    "kenya": {
+      "n": 5,
+      "mean_subdomains": 11.8,
+      "mean_discovered_ips": 10.0,
+      "spf_rate": 1.0,
+      "dmarc_rate": 0.8,
+      "dmarc_enforcement_rate": 0.4,
+      "high_priority_rate": 0.2,
+      "mean_asset_coverage": 1.0
+    },
+    "nigeria": {
+      "n": 5,
+      "mean_subdomains": 9.0,
+      "mean_discovered_ips": 6.8,
+      "spf_rate": 1.0,
+      "dmarc_rate": 0.8,
+      "dmarc_enforcement_rate": 0.6,
+      "high_priority_rate": 0.2,
+      "mean_asset_coverage": null
+    },
+    "south-africa": {
+      "n": 5,
+      "mean_subdomains": 11.2,
+      "mean_discovered_ips": 11.0,
+      "spf_rate": 1.0,
+      "dmarc_rate": 0.8,
+      "dmarc_enforcement_rate": 0.8,
+      "high_priority_rate": 0.2,
+      "mean_asset_coverage": null
+    },
+    "tanzania": {
+      "n": 5,
+      "mean_subdomains": 9.2,
+      "mean_discovered_ips": 9.6,
+      "spf_rate": 0.8,
+      "dmarc_rate": 0.8,
+      "dmarc_enforcement_rate": 0.8,
+      "high_priority_rate": 0.2,
+      "mean_asset_coverage": null
+    }
+  },
+  "by_sector": {
+    "business": {
+      "n": 6,
+      "mean_subdomains": 11.5,
+      "mean_discovered_ips": 10.5,
+      "spf_rate": 1.0,
+      "dmarc_rate": 1.0,
+      "dmarc_enforcement_rate": 1.0,
+      "high_priority_rate": 0.0,
+      "mean_asset_coverage": null
+    },
+    "government": {
+      "n": 6,
+      "mean_subdomains": 11.83,
+      "mean_discovered_ips": 11.83,
+      "spf_rate": 0.6667,
+      "dmarc_rate": 0.0,
+      "dmarc_enforcement_rate": 0.0,
+      "high_priority_rate": 1.0,
+      "mean_asset_coverage": 1.0
+    },
+    "healthcare": {
+      "n": 6,
+      "mean_subdomains": 19.33,
+      "mean_discovered_ips": 5.67,
+      "spf_rate": 0.8333,
+      "dmarc_rate": 0.8333,
+      "dmarc_enforcement_rate": 0.6667,
+      "high_priority_rate": 0.1667,
+      "mean_asset_coverage": null
+    },
+    "telecom-tech": {
+      "n": 6,
+      "mean_subdomains": 9.67,
+      "mean_discovered_ips": 9.5,
+      "spf_rate": 0.8333,
+      "dmarc_rate": 0.8333,
+      "dmarc_enforcement_rate": 0.8333,
+      "high_priority_rate": 0.1667,
+      "mean_asset_coverage": null
+    },
+    "universities": {
+      "n": 6,
+      "mean_subdomains": 14.0,
+      "mean_discovered_ips": 13.83,
+      "spf_rate": 1.0,
+      "dmarc_rate": 1.0,
+      "dmarc_enforcement_rate": 0.5,
+      "high_priority_rate": 0.0,
+      "mean_asset_coverage": null
+    }
+  }
+}

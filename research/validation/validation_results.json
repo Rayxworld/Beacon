@@ -1,0 +1,197 @@
+{
+  "total_checks": 258,
+  "google_8_8_8_8": {
+    "presence_agreement_rate": 0.6395,
+    "mean_jaccard_similarity": 0.6395
+  },
+  "cloudflare_1_1_1_1": {
+    "presence_agreement_rate": 0.6822,
+    "mean_jaccard_similarity": 0.6822
+  },
+  "quad9_9_9_9": {
+    "presence_agreement_rate": 0.6938,
+    "mean_jaccard_similarity": 0.6938
+  },
+  "sample_findings": [
+    {
+      "target": "nigeria.gov.ng",
+      "queried": "nigeria.gov.ng",
+      "type": "A",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "nigeria.gov.ng",
+      "queried": "nigeria.gov.ng",
+      "type": "AAAA",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "nigeria.gov.ng",
+      "queried": "nigeria.gov.ng",
+      "type": "MX",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "nigeria.gov.ng",
+      "queried": "nigeria.gov.ng",
+      "type": "NS",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "nigeria.gov.ng",
+      "queried": "nigeria.gov.ng",
+      "type": "TXT",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "nigeria.gov.ng",
+      "queried": "nigeria.gov.ng",
+      "type": "CNAME",
+      "expected_present": false,
+      "cf_agree": true,
+      "q9_agree": true,
+      "goog_agree": true,
+      "cf_jaccard": 1.0,
+      "q9_jaccard": 1.0,
+      "goog_jaccard": 1.0
+    },
+    {
+      "target": "ghana.gov.gh",
+      "queried": "ghana.gov.gh",
+      "type": "A",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": true,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 1.0
+    },
+    {
+      "target": "ghana.gov.gh",
+      "queried": "ghana.gov.gh",
+      "type": "AAAA",
+      "expected_present": false,
+      "cf_agree": true,
+      "q9_agree": true,
+      "goog_agree": true,
+      "cf_jaccard": 1.0,
+      "q9_jaccard": 1.0,
+      "goog_jaccard": 1.0
+    },
+    {
+      "target": "ghana.gov.gh",
+      "queried": "ghana.gov.gh",
+      "type": "MX",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "ghana.gov.gh",
+      "queried": "ghana.gov.gh",
+      "type": "NS",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "ghana.gov.gh",
+      "queried": "ghana.gov.gh",
+      "type": "TXT",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "ghana.gov.gh",
+      "queried": "ghana.gov.gh",
+      "type": "CNAME",
+      "expected_present": false,
+      "cf_agree": true,
+      "q9_agree": true,
+      "goog_agree": true,
+      "cf_jaccard": 1.0,
+      "q9_jaccard": 1.0,
+      "goog_jaccard": 1.0
+    },
+    {
+      "target": "kenya.go.ke",
+      "queried": "apsd.kenya.go.ke",
+      "type": "A",
+      "expected_present": true,
+      "cf_agree": false,
+      "q9_agree": false,
+      "goog_agree": false,
+      "cf_jaccard": 0.0,
+      "q9_jaccard": 0.0,
+      "goog_jaccard": 0.0
+    },
+    {
+      "target": "kenya.go.ke",
+      "queried": "apsd.kenya.go.ke",
+      "type": "AAAA",
+      "expected_present": false,
+      "cf_agree": true,
+      "q9_agree": true,
+      "goog_agree": true,
+      "cf_jaccard": 1.0,
+      "q9_jaccard": 1.0,
+      "goog_jaccard": 1.0
+    },
+    {
+      "target": "kenya.go.ke",
+      "queried": "apsd.kenya.go.ke",
+      "type": "MX",
+      "expected_present": false,
+      "cf_agree": true,
+      "q9_agree": true,
+      "goog_agree": true,
+      "cf_jaccard": 1.0,
+      "q9_jaccard": 1.0,
+      "goog_jaccard": 1.0
+    }
+  ]
+}

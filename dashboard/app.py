@@ -1,3 +1,4 @@
+from collectors.domain_utils import get_registrable_domain, normalize_domain
 """Beacon public exposure intelligence dashboard."""
 
 import json
@@ -77,9 +78,12 @@ def providers(dns_data):
     for item in dns_data:
         for record_type in ("NS", "MX"):
             for value in item.get("records", {}).get(record_type, []):
-                parts = value.rstrip(".").split(".")
-                if len(parts) >= 2:
-                    counts[".".join(parts[-2:])] += 1
+                val_parts = value.rstrip(".").split()
+                host = val_parts[-1] if val_parts else value
+                try:
+                    counts[get_registrable_domain(host)] += 1
+                except ValueError:
+                    pass
     return pd.DataFrame(counts.most_common(15), columns=["Provider", "Records"])
 
 
