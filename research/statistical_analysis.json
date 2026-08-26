@@ -1,0 +1,267 @@
+{
+  "sample_size": 30,
+  "prevalence": {
+    "spf": {
+      "count": 26,
+      "proportion": 0.8667,
+      "ci_95": [
+        0.7032,
+        0.9469
+      ],
+      "weak_policy_count": 14,
+      "weak_policy_rate_of_adopted": 0.5385
+    },
+    "dmarc": {
+      "count": 22,
+      "proportion": 0.7333,
+      "ci_95": [
+        0.5555,
+        0.8582
+      ],
+      "policy_distribution": {
+        "absent": 8,
+        "none": 4,
+        "quarantine": 6,
+        "reject": 12
+      },
+      "enforced_count": 18,
+      "enforced_proportion": 0.6,
+      "enforced_ci_95": [
+        0.4232,
+        0.7541
+      ]
+    },
+    "high_priority_findings": {
+      "count": 8,
+      "proportion": 0.2667
+    },
+    "subdomains": {
+      "mean": 13.27,
+      "median": 12.0,
+      "stdev": 14.44,
+      "min": 1,
+      "max": 70
+    },
+    "discovered_ips": {
+      "mean": 10.27,
+      "median": 9.0,
+      "stdev": 9.45,
+      "min": 1,
+      "max": 51
+    },
+    "posture_score": {
+      "mean": 72.93,
+      "median": 76.0,
+      "stdev": 16.83,
+      "min": 0,
+      "max": 92
+    }
+  },
+  "by_sector": {
+    "business": {
+      "n": 6,
+      "spf_rate": 1.0,
+      "spf_count": 6,
+      "dmarc_rate": 1.0,
+      "dmarc_count": 6,
+      "dmarc_enforced_rate": 1.0,
+      "dmarc_enforced_count": 6,
+      "high_priority_rate": 0.0,
+      "high_priority_count": 0,
+      "subdomains_mean": 11.5,
+      "subdomains_median": 12.0,
+      "ips_mean": 10.5,
+      "ips_median": 12.0,
+      "posture_mean": 80,
+      "posture_median": 80.0
+    },
+    "government": {
+      "n": 6,
+      "spf_rate": 0.6667,
+      "spf_count": 4,
+      "dmarc_rate": 0.0,
+      "dmarc_count": 0,
+      "dmarc_enforced_rate": 0.0,
+      "dmarc_enforced_count": 0,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 6,
+      "subdomains_mean": 11.83,
+      "subdomains_median": 4.0,
+      "ips_mean": 11.83,
+      "ips_median": 4.0,
+      "posture_mean": 55.17,
+      "posture_median": 65.5
+    },
+    "healthcare": {
+      "n": 6,
+      "spf_rate": 0.8333,
+      "spf_count": 5,
+      "dmarc_rate": 0.8333,
+      "dmarc_count": 5,
+      "dmarc_enforced_rate": 0.6667,
+      "dmarc_enforced_count": 4,
+      "high_priority_rate": 0.1667,
+      "high_priority_count": 1,
+      "subdomains_mean": 19.33,
+      "subdomains_median": 7.5,
+      "ips_mean": 5.67,
+      "ips_median": 4.5,
+      "posture_mean": 73.17,
+      "posture_median": 76.0
+    },
+    "telecom-tech": {
+      "n": 6,
+      "spf_rate": 0.8333,
+      "spf_count": 5,
+      "dmarc_rate": 0.8333,
+      "dmarc_count": 5,
+      "dmarc_enforced_rate": 0.8333,
+      "dmarc_enforced_count": 5,
+      "high_priority_rate": 0.1667,
+      "high_priority_count": 1,
+      "subdomains_mean": 9.67,
+      "subdomains_median": 9.0,
+      "ips_mean": 9.5,
+      "ips_median": 7.5,
+      "posture_mean": 80.33,
+      "posture_median": 84.0
+    },
+    "universities": {
+      "n": 6,
+      "spf_rate": 1.0,
+      "spf_count": 6,
+      "dmarc_rate": 1.0,
+      "dmarc_count": 6,
+      "dmarc_enforced_rate": 0.5,
+      "dmarc_enforced_count": 3,
+      "high_priority_rate": 0.0,
+      "high_priority_count": 0,
+      "subdomains_mean": 14,
+      "subdomains_median": 13.0,
+      "ips_mean": 13.83,
+      "ips_median": 13.0,
+      "posture_mean": 76,
+      "posture_median": 76.0
+    }
+  },
+  "by_country": {
+    "egypt": {
+      "n": 5,
+      "spf_rate": 0.8,
+      "spf_count": 4,
+      "dmarc_rate": 0.8,
+      "dmarc_count": 4,
+      "dmarc_enforced_rate": 0.8,
+      "dmarc_enforced_count": 4,
+      "high_priority_rate": 0.2,
+      "high_priority_count": 1,
+      "subdomains_mean": 5.6,
+      "subdomains_median": 5,
+      "ips_mean": 5.6,
+      "ips_median": 5
+    },
+    "ghana": {
+      "n": 5,
+      "spf_rate": 0.6,
+      "spf_count": 3,
+      "dmarc_rate": 0.4,
+      "dmarc_count": 2,
+      "dmarc_enforced_rate": 0.2,
+      "dmarc_enforced_count": 1,
+      "high_priority_rate": 0.6,
+      "high_priority_count": 3,
+      "subdomains_mean": 32.8,
+      "subdomains_median": 26,
+      "ips_mean": 18.6,
+      "ips_median": 12
+    },
+    "kenya": {
+      "n": 5,
+      "spf_rate": 1.0,
+      "spf_count": 5,
+      "dmarc_rate": 0.8,
+      "dmarc_count": 4,
+      "dmarc_enforced_rate": 0.4,
+      "dmarc_enforced_count": 2,
+      "high_priority_rate": 0.2,
+      "high_priority_count": 1,
+      "subdomains_mean": 11.8,
+      "subdomains_median": 12,
+      "ips_mean": 10,
+      "ips_median": 9
+    },
+    "nigeria": {
+      "n": 5,
+      "spf_rate": 1.0,
+      "spf_count": 5,
+      "dmarc_rate": 0.8,
+      "dmarc_count": 4,
+      "dmarc_enforced_rate": 0.6,
+      "dmarc_enforced_count": 3,
+      "high_priority_rate": 0.2,
+      "high_priority_count": 1,
+      "subdomains_mean": 9,
+      "subdomains_median": 8,
+      "ips_mean": 6.8,
+      "ips_median": 6
+    },
+    "south-africa": {
+      "n": 5,
+      "spf_rate": 1.0,
+      "spf_count": 5,
+      "dmarc_rate": 0.8,
+      "dmarc_count": 4,
+      "dmarc_enforced_rate": 0.8,
+      "dmarc_enforced_count": 4,
+      "high_priority_rate": 0.2,
+      "high_priority_count": 1,
+      "subdomains_mean": 11.2,
+      "subdomains_median": 14,
+      "ips_mean": 11,
+      "ips_median": 12
+    },
+    "tanzania": {
+      "n": 5,
+      "spf_rate": 0.8,
+      "spf_count": 4,
+      "dmarc_rate": 0.8,
+      "dmarc_count": 4,
+      "dmarc_enforced_rate": 0.8,
+      "dmarc_enforced_count": 4,
+      "high_priority_rate": 0.2,
+      "high_priority_count": 1,
+      "subdomains_mean": 9.2,
+      "subdomains_median": 12,
+      "ips_mean": 9.6,
+      "ips_median": 12
+    }
+  },
+  "statistical_tests": {
+    "government_vs_other_dmarc_chi2": {
+      "chi2": 16.2038,
+      "p_value": 0.0001,
+      "contingency_table": {
+        "government": {
+          "dmarc": 0,
+          "no_dmarc": 6
+        },
+        "non_government": {
+          "dmarc": 22,
+          "no_dmarc": 2
+        }
+      }
+    },
+    "subdomains_across_sectors_kruskal_wallis": {
+      "H": 4.3387,
+      "p_value": 0.3623
+    },
+    "subdomains_across_countries_kruskal_wallis": {
+      "H": 6.311,
+      "p_value": 0.2764
+    },
+    "posture_across_sectors_kruskal_wallis": {
+      "H": 8.786,
+      "p_value": 0.0658
+    }
+  }
+}

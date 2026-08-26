@@ -1,0 +1,46 @@
+# Data files
+findings/*.json
+findings/*.csv
+findings/*.db
+findings/raw/
+data/samples/*.json
+data/sonar/*.json
+data/free_sources/*.json
+data/shodan/*.json
+data/crtsh/*.json
+data/ripe/*.json
+data/dns/*.json
+data/subdomains/*.json
+data/targets/*
+research/dataset.json
+research/dataset.csv
+research/summary.json
+output/*.json
+output/*.md
+output/*.html
+output/*.pdf
+
+# Large downloaded files
+*.json.gz
+*.csv.gz
+*.tar.gz
+*.zip
+
+# Environment
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
