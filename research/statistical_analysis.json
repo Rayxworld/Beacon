@@ -1,143 +1,190 @@
 {
   "study_metadata": {
-    "sample_size": 30,
+    "sample_size": 75,
     "sampling_design": "Stratified Purposive Sampling (6 countries x 5 sectors = 30 organizations)",
     "scope": "Passive observable infrastructure measurements"
   },
   "prevalence": {
     "spf": {
-      "count": 26,
-      "proportion": 0.8667,
+      "count": 49,
+      "proportion": 0.6533,
       "ci_95": [
-        0.7032,
-        0.9469
+        0.5405,
+        0.7512
       ],
-      "weak_policy_count": 15,
-      "weak_policy_rate_of_adopted": 0.5769,
+      "weak_policy_count": 20,
+      "weak_policy_rate_of_adopted": 0.4082,
       "policy_distribution": {
-        "weak_softfail": 14,
-        "strict_hardfail": 11,
-        "absent": 4,
-        "unspecified_all": 1
+        "weak_softfail": 17,
+        "strict_hardfail": 29,
+        "absent": 22,
+        "null": 3,
+        "multiple_records_prohibited": 1,
+        "unspecified_all": 3
       }
     },
     "dmarc": {
-      "count": 22,
-      "proportion": 0.7333,
+      "count": 41,
+      "proportion": 0.5467,
       "ci_95": [
-        0.5555,
-        0.8582
+        0.4345,
+        0.6543
       ],
       "policy_distribution": {
-        "absent": 8,
-        "none": 4,
-        "quarantine": 6,
-        "reject": 12
+        "absent": 34,
+        "none": 6,
+        "reject": 18,
+        "quarantine": 17
       },
-      "enforced_count": 18,
-      "enforced_proportion": 0.6,
+      "enforced_count": 35,
+      "enforced_proportion": 0.4667,
       "enforced_ci_95": [
-        0.4232,
-        0.7541
+        0.3582,
+        0.5784
       ]
     },
     "high_priority_findings": {
-      "count": 8,
-      "proportion": 0.2667
+      "count": 67,
+      "proportion": 0.8933
     },
     "subdomains": {
-      "mean": 13.27,
-      "median": 12.0,
-      "stdev": 14.44,
-      "min": 1,
-      "max": 70
+      "mean": 13.24,
+      "median": 6,
+      "stdev": 33.29,
+      "min": 0,
+      "max": 280
     },
     "discovered_ips": {
-      "mean": 10.27,
-      "median": 9.0,
-      "stdev": 9.45,
-      "min": 1,
-      "max": 51
+      "mean": 14.65,
+      "median": 12,
+      "stdev": 13.35,
+      "min": 0,
+      "max": 56
     }
   },
   "by_sector": {
     "business": {
-      "n": 6,
-      "spf_rate": 1.0,
-      "spf_count": 6,
-      "dmarc_rate": 1.0,
-      "dmarc_count": 6,
-      "dmarc_enforced_rate": 1.0,
-      "dmarc_enforced_count": 6,
-      "high_priority_rate": 0.0,
-      "high_priority_count": 0,
-      "subdomains_mean": 11.5,
-      "subdomains_median": 12.0,
-      "ips_mean": 10.5,
-      "ips_median": 12.0
+      "n": 15,
+      "spf_rate": 0.6667,
+      "spf_count": 10,
+      "dmarc_rate": 0.6667,
+      "dmarc_count": 10,
+      "dmarc_enforced_rate": 0.6667,
+      "dmarc_enforced_count": 10,
+      "high_priority_rate": 0.7333,
+      "high_priority_count": 11,
+      "subdomains_mean": 28.33,
+      "subdomains_median": 12,
+      "ips_mean": 12,
+      "ips_median": 7
     },
     "government": {
-      "n": 6,
-      "spf_rate": 0.6667,
-      "spf_count": 4,
-      "dmarc_rate": 0.0,
-      "dmarc_count": 0,
-      "dmarc_enforced_rate": 0.0,
-      "dmarc_enforced_count": 0,
+      "n": 15,
+      "spf_rate": 0.5333,
+      "spf_count": 8,
+      "dmarc_rate": 0.2,
+      "dmarc_count": 3,
+      "dmarc_enforced_rate": 0.1333,
+      "dmarc_enforced_count": 2,
       "high_priority_rate": 1.0,
-      "high_priority_count": 6,
-      "subdomains_mean": 11.83,
-      "subdomains_median": 4.0,
-      "ips_mean": 11.83,
-      "ips_median": 4.0
+      "high_priority_count": 15,
+      "subdomains_mean": 6.53,
+      "subdomains_median": 2,
+      "ips_mean": 18.53,
+      "ips_median": 13
     },
     "healthcare": {
-      "n": 6,
-      "spf_rate": 0.8333,
-      "spf_count": 5,
-      "dmarc_rate": 0.8333,
-      "dmarc_count": 5,
-      "dmarc_enforced_rate": 0.6667,
-      "dmarc_enforced_count": 4,
-      "high_priority_rate": 0.1667,
-      "high_priority_count": 1,
-      "subdomains_mean": 19.33,
-      "subdomains_median": 7.5,
-      "ips_mean": 5.67,
-      "ips_median": 4.5
+      "n": 15,
+      "spf_rate": 0.7333,
+      "spf_count": 11,
+      "dmarc_rate": 0.6,
+      "dmarc_count": 9,
+      "dmarc_enforced_rate": 0.5333,
+      "dmarc_enforced_count": 8,
+      "high_priority_rate": 0.9333,
+      "high_priority_count": 14,
+      "subdomains_mean": 11.87,
+      "subdomains_median": 6,
+      "ips_mean": 11.2,
+      "ips_median": 6
     },
     "telecom-tech": {
-      "n": 6,
-      "spf_rate": 0.8333,
-      "spf_count": 5,
-      "dmarc_rate": 0.8333,
-      "dmarc_count": 5,
-      "dmarc_enforced_rate": 0.8333,
-      "dmarc_enforced_count": 5,
-      "high_priority_rate": 0.1667,
-      "high_priority_count": 1,
-      "subdomains_mean": 9.67,
-      "subdomains_median": 9.0,
-      "ips_mean": 9.5,
-      "ips_median": 7.5
+      "n": 15,
+      "spf_rate": 0.6,
+      "spf_count": 9,
+      "dmarc_rate": 0.5333,
+      "dmarc_count": 8,
+      "dmarc_enforced_rate": 0.5333,
+      "dmarc_enforced_count": 8,
+      "high_priority_rate": 0.8667,
+      "high_priority_count": 13,
+      "subdomains_mean": 7.4,
+      "subdomains_median": 6,
+      "ips_mean": 13.47,
+      "ips_median": 11
     },
     "universities": {
-      "n": 6,
-      "spf_rate": 1.0,
-      "spf_count": 6,
-      "dmarc_rate": 1.0,
-      "dmarc_count": 6,
-      "dmarc_enforced_rate": 0.5,
-      "dmarc_enforced_count": 3,
-      "high_priority_rate": 0.0,
-      "high_priority_count": 0,
-      "subdomains_mean": 14,
-      "subdomains_median": 13.0,
-      "ips_mean": 13.83,
-      "ips_median": 13.0
+      "n": 15,
+      "spf_rate": 0.7333,
+      "spf_count": 11,
+      "dmarc_rate": 0.7333,
+      "dmarc_count": 11,
+      "dmarc_enforced_rate": 0.4667,
+      "dmarc_enforced_count": 7,
+      "high_priority_rate": 0.9333,
+      "high_priority_count": 14,
+      "subdomains_mean": 12.07,
+      "subdomains_median": 12,
+      "ips_mean": 18.07,
+      "ips_median": 16
     }
   },
   "by_country": {
+    "botswana": {
+      "n": 5,
+      "spf_rate": 0.6,
+      "spf_count": 3,
+      "dmarc_rate": 0.6,
+      "dmarc_count": 3,
+      "dmarc_enforced_rate": 0.6,
+      "dmarc_enforced_count": 3,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 7.6,
+      "subdomains_median": 6,
+      "ips_mean": 13.8,
+      "ips_median": 7
+    },
+    "cameroon": {
+      "n": 5,
+      "spf_rate": 0.4,
+      "spf_count": 2,
+      "dmarc_rate": 0.2,
+      "dmarc_count": 1,
+      "dmarc_enforced_rate": 0.2,
+      "dmarc_enforced_count": 1,
+      "high_priority_rate": 0.8,
+      "high_priority_count": 4,
+      "subdomains_mean": 1.8,
+      "subdomains_median": 1,
+      "ips_mean": 4.2,
+      "ips_median": 2
+    },
+    "c\u00f4te d'ivoire": {
+      "n": 5,
+      "spf_rate": 0.2,
+      "spf_count": 1,
+      "dmarc_rate": 0.2,
+      "dmarc_count": 1,
+      "dmarc_enforced_rate": 0.2,
+      "dmarc_enforced_count": 1,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 1.8,
+      "subdomains_median": 0,
+      "ips_mean": 4.4,
+      "ips_median": 0
+    },
     "egypt": {
       "n": 5,
       "spf_rate": 0.8,
@@ -146,12 +193,27 @@
       "dmarc_count": 4,
       "dmarc_enforced_rate": 0.8,
       "dmarc_enforced_count": 4,
-      "high_priority_rate": 0.2,
-      "high_priority_count": 1,
-      "subdomains_mean": 5.6,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 7.6,
       "subdomains_median": 5,
-      "ips_mean": 5.6,
-      "ips_median": 5
+      "ips_mean": 18.4,
+      "ips_median": 12
+    },
+    "ethiopia": {
+      "n": 5,
+      "spf_rate": 0.8,
+      "spf_count": 4,
+      "dmarc_rate": 0.6,
+      "dmarc_count": 3,
+      "dmarc_enforced_rate": 0.4,
+      "dmarc_enforced_count": 2,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 6.8,
+      "subdomains_median": 5,
+      "ips_mean": 14.2,
+      "ips_median": 18
     },
     "ghana": {
       "n": 5,
@@ -163,25 +225,40 @@
       "dmarc_enforced_count": 1,
       "high_priority_rate": 0.6,
       "high_priority_count": 3,
-      "subdomains_mean": 32.8,
-      "subdomains_median": 26,
-      "ips_mean": 18.6,
-      "ips_median": 12
+      "subdomains_mean": 30.6,
+      "subdomains_median": 20,
+      "ips_mean": 21.2,
+      "ips_median": 18
     },
     "kenya": {
       "n": 5,
-      "spf_rate": 1.0,
-      "spf_count": 5,
+      "spf_rate": 0.6,
+      "spf_count": 3,
       "dmarc_rate": 0.8,
       "dmarc_count": 4,
+      "dmarc_enforced_rate": 0.6,
+      "dmarc_enforced_count": 3,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 12.8,
+      "subdomains_median": 12,
+      "ips_mean": 17.4,
+      "ips_median": 16
+    },
+    "morocco": {
+      "n": 5,
+      "spf_rate": 0.8,
+      "spf_count": 4,
+      "dmarc_rate": 0.4,
+      "dmarc_count": 2,
       "dmarc_enforced_rate": 0.4,
       "dmarc_enforced_count": 2,
-      "high_priority_rate": 0.2,
-      "high_priority_count": 1,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
       "subdomains_mean": 11.8,
-      "subdomains_median": 12,
-      "ips_mean": 10,
-      "ips_median": 9
+      "subdomains_median": 6,
+      "ips_mean": 17.4,
+      "ips_median": 19
     },
     "nigeria": {
       "n": 5,
@@ -191,14 +268,44 @@
       "dmarc_count": 4,
       "dmarc_enforced_rate": 0.6,
       "dmarc_enforced_count": 3,
-      "high_priority_rate": 0.2,
-      "high_priority_count": 1,
+      "high_priority_rate": 0.8,
+      "high_priority_count": 4,
       "subdomains_mean": 9,
       "subdomains_median": 8,
-      "ips_mean": 6.8,
-      "ips_median": 6
+      "ips_mean": 16.2,
+      "ips_median": 7
     },
-    "south-africa": {
+    "rwanda": {
+      "n": 5,
+      "spf_rate": 0.8,
+      "spf_count": 4,
+      "dmarc_rate": 0.6,
+      "dmarc_count": 3,
+      "dmarc_enforced_rate": 0.6,
+      "dmarc_enforced_count": 3,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 11.6,
+      "subdomains_median": 7,
+      "ips_mean": 17,
+      "ips_median": 20
+    },
+    "senegal": {
+      "n": 5,
+      "spf_rate": 0.4,
+      "spf_count": 2,
+      "dmarc_rate": 0.2,
+      "dmarc_count": 1,
+      "dmarc_enforced_rate": 0.0,
+      "dmarc_enforced_count": 0,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 3,
+      "subdomains_median": 3,
+      "ips_mean": 6.6,
+      "ips_median": 8
+    },
+    "south africa": {
       "n": 5,
       "spf_rate": 1.0,
       "spf_count": 5,
@@ -206,55 +313,85 @@
       "dmarc_count": 4,
       "dmarc_enforced_rate": 0.8,
       "dmarc_enforced_count": 4,
-      "high_priority_rate": 0.2,
-      "high_priority_count": 1,
-      "subdomains_mean": 11.2,
+      "high_priority_rate": 0.6,
+      "high_priority_count": 3,
+      "subdomains_mean": 11,
       "subdomains_median": 14,
-      "ips_mean": 11,
-      "ips_median": 12
+      "ips_mean": 13.8,
+      "ips_median": 14
     },
     "tanzania": {
       "n": 5,
-      "spf_rate": 0.8,
-      "spf_count": 4,
+      "spf_rate": 0.6,
+      "spf_count": 3,
       "dmarc_rate": 0.8,
       "dmarc_count": 4,
       "dmarc_enforced_rate": 0.8,
       "dmarc_enforced_count": 4,
-      "high_priority_rate": 0.2,
-      "high_priority_count": 1,
+      "high_priority_rate": 0.8,
+      "high_priority_count": 4,
       "subdomains_mean": 9.2,
       "subdomains_median": 12,
-      "ips_mean": 9.6,
+      "ips_mean": 16.4,
       "ips_median": 12
+    },
+    "uganda": {
+      "n": 5,
+      "spf_rate": 0.8,
+      "spf_count": 4,
+      "dmarc_rate": 0.6,
+      "dmarc_count": 3,
+      "dmarc_enforced_rate": 0.6,
+      "dmarc_enforced_count": 3,
+      "high_priority_rate": 0.8,
+      "high_priority_count": 4,
+      "subdomains_mean": 65.8,
+      "subdomains_median": 12,
+      "ips_mean": 14.6,
+      "ips_median": 8
+    },
+    "zambia": {
+      "n": 5,
+      "spf_rate": 0.4,
+      "spf_count": 2,
+      "dmarc_rate": 0.4,
+      "dmarc_count": 2,
+      "dmarc_enforced_rate": 0.2,
+      "dmarc_enforced_count": 1,
+      "high_priority_rate": 1.0,
+      "high_priority_count": 5,
+      "subdomains_mean": 8.2,
+      "subdomains_median": 7,
+      "ips_mean": 24.2,
+      "ips_median": 25
     }
   },
   "statistical_tests": {
     "government_vs_nongovernment_dmarc_adoption": {
       "test": "Pearson Chi-Square with Yates continuity correction",
-      "chi2": 16.2038,
-      "p_value": 0.0001,
+      "chi2": 7.428,
+      "p_value": 0.0064,
       "contingency_table": {
         "government": {
-          "dmarc_present": 0,
-          "dmarc_absent": 6
+          "dmarc_present": 3,
+          "dmarc_absent": 12
         },
         "non_government": {
-          "dmarc_present": 22,
-          "dmarc_absent": 2
+          "dmarc_present": 38,
+          "dmarc_absent": 22
         }
       },
       "interpretation": "Statistically significant deficit in DMARC adoption for sampled national government domains compared to non-government organizations."
     },
     "subdomains_across_sectors": {
       "test": "Kruskal-Wallis H-test",
-      "H": 4.3387,
-      "p_value": 0.3623
+      "H": 5.8476,
+      "p_value": 0.2095
     },
     "subdomains_across_countries": {
       "test": "Kruskal-Wallis H-test",
-      "H": 6.311,
-      "p_value": 0.2764
+      "H": 22.9453,
+      "p_value": 0.0609
     }
   }
 }
