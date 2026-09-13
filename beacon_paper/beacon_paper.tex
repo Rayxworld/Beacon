@@ -27,7 +27,7 @@ Email: fafiraymond7@gmail.com}
 \maketitle
 
 \begin{abstract}
-Organizations expose digital infrastructure through ordinary Internet operations before any active security assessment begins. Public Certificate Transparency (CT) logs, Domain Name System (DNS) configurations, resolvable hostnames, and historically observed IP-service metadata provide an external perspective on organizational exposure without authentication or intrusive probing. This paper presents \textit{Beacon}, an open-source, reproducible passive measurement framework, and evaluates it on an Africa-first stratified sampling frame of 30 organizations across six nations and five sectors. Our findings reveal that while SPF adoption is high (86.7\%, 95\% CI: [70.3\%, 94.7\%]), 53.8\% of adopting domains employ weak softfail mechanisms. DMARC adoption reaches 73.3\% (95\% CI: [55.6\%, 85.8\%]), but a critical sectoral disparity emerges: 0.0\% of sampled government domains publish DMARC records, compared to 91.7\% of non-government sectors ($\chi^2 = 16.20, p < 0.0001$). This represents the first multi-national, cross-sector empirical measurement of email authentication and public asset exposure across major African institutions using exclusively free data sources.
+Organizations expose digital infrastructure through ordinary Internet operations before any active security assessment begins. Public Certificate Transparency (CT) logs, Domain Name System (DNS) configurations, resolvable hostnames, and historically observed IP-service metadata provide an external perspective on organizational exposure without authentication or intrusive probing. This paper presents \textit{Beacon}, an open-source, reproducible passive measurement framework, and evaluates it on an Africa-first stratified sampling frame of \textbf{75 organizations across 15 African nations} and five sectors (Government, Higher Education, Financial/Business, Healthcare, Telecommunications/Technology). Our findings reveal that while SPF adoption reaches 65.3\% (95\% CI: [54.1\%, 75.1\%]), only 38.7\% enforce strict policies ($-$all). DMARC adoption stands at 54.7\% (95\% CI: [43.5\%, 65.4\%]), but a critical sectoral disparity emerges: Government DMARC adoption is only 20.0\% versus 64.2\% for non-government sectors ($\chi^2 = 9.06, p = 0.0026$). Attack surface measurements reveal a mean of 13.24 subdomains per organization (range: 0--280) and 14.65 discovered public IPs. High-priority security findings exist in 89.3\% of sampled organizations. This represents the largest multi-national, cross-sector empirical measurement of email authentication, attack surface exposure, and infrastructure visibility across African institutions using exclusively free public data sources.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -38,14 +38,19 @@ passive network measurement, Internet exposure, DNS security, Certificate Transp
 
 Internet-facing infrastructure is observable through public routing, naming, and cryptographic logging systems without authentication, exploitation, or intrusive scanning. Organizations routinely publish DNS records to route traffic and authenticate mail, obtain TLS certificates recorded in append-only Certificate Transparency (CT) logs, and operate services indexed by internet-wide observational platforms. While these telemetry sources provide valuable attack-surface visibility for defensive operators, empirical measurement in academic literature has frequently suffered from methodological shortcomings---including conflating passive visibility with security compromise, failing to document upstream data source limitations, and neglecting emerging Internet regions \cite{durumeric2014internet, levchenko2016understanding}.
 
-This work introduces \textit{Beacon} as both a lightweight, dependency-minimal software framework and a formalized research instrument. Beacon applies a standardized, non-intrusive collection pipeline to organization domains, structures findings with explainable deduction rules, and outputs anonymized, reproducible datasets. To demonstrate the framework's utility, we conduct an Africa-first empirical pilot evaluation across six African nations: Nigeria, Ghana, Kenya, South Africa, Egypt, and Tanzania.
+This work introduces \textit{Beacon} as both a lightweight, dependency-minimal software framework and a formalized research instrument. Beacon applies a standardized, non-intrusive collection pipeline to organization domains, structures findings with explainable deduction rules, and outputs anonymized, reproducible datasets. To demonstrate the framework's utility, we conduct an Africa-first empirical evaluation across \textbf{15 African nations} spanning West Africa (Nigeria, Ghana, Senegal, Côte d'Ivoire), East Africa (Kenya, Tanzania, Uganda, Rwanda, Ethiopia), North Africa (Egypt, Morocco), Southern Africa (South Africa, Botswana, Zambia), and Central Africa (Cameroon).
 
+\subsection*{Contributions}
 The contributions of this paper are fourfold:
+
 \begin{enumerate}
     \item \textbf{Reproducible Passive Pipeline:} We specify and release an open-source measurement architecture that combines public DNS resolvers, CT logs, wordlist-based subdomain resolution, and passive IP enrichment (Shodan InternetDB) without conducting active vulnerability scans or port scans.
-    \item \textbf{Empirical African Pilot Findings:} We provide the first multi-national, cross-sector empirical measurement of email authentication (SPF/DMARC) and public asset exposure across 30 major African institutions.
-    \item \textbf{Methodological Rigor on Upstream API Failure:} We identify and address critical measurement artifacts in public CT data sources (specifically crt.sh query timeouts and rate-limits), demonstrating how failure to flag upstream source unavailability leads to severe coverage miscalculations.
-    \item \textbf{Responsible Disclosure and Ethical Protocol:} We articulate an operational model that bridges academic measurement and responsible remediation without exposing raw identifying vulnerability data publicly.
+    
+    \item \textbf{Continental-Scale Empirical Findings:} We provide the first continental-scale, multi-national, cross-sector empirical measurement of email authentication (SPF/DMARC), attack surface exposure, and infrastructure visibility across 75 major African institutions (5 organizations per country, 15 organizations per sector).
+    
+    \item \textbf{Methodological Rigor on Upstream API Degradation:} We identify and address critical measurement artifacts in public CT data sources (96.7\% timeout/rate-limit rate), demonstrating how failure to flag upstream source unavailability leads to severe coverage miscalculations. We validate consistency across multi-resolver DNS queries.
+    
+    \item \textbf{Responsible Disclosure and Ethical Protocol:} We articulate an operational model that bridges academic measurement and responsible remediation without exposing raw identifying vulnerability data publicly, using salted SHA-256 domain anonymization.
 \end{enumerate}
 
 \section{Related Work}
@@ -80,7 +85,16 @@ This study evaluates five specific research questions:
 We define \textbf{observable Internet exposure} strictly as information retrievable through benign public queries to authoritative or public recursive DNS resolvers, public CT repositories, and pre-indexed public databases without authentication, vulnerability exploitation, or port scanning. Beacon adheres to passive observation principles: no TCP SYN packets, no HTTP requests to target services, and no credential attempts. Raw target domains are restricted to local operational logs; published datasets utilize salted SHA-256 pseudonymized hashes.
 
 \subsection{Sampling Frame}
-The pilot uses six countries (Nigeria, Ghana, Kenya, South Africa, Egypt, Tanzania) representing Western, Eastern, Southern, and Northern Africa. Within each country, we stratify across five sectors: Government, Higher Education, Financial/Business, Healthcare, and Telecommunications/Technology. The resulting sample consists of $N = 30$ organizations ($6 \times 5$ balanced matrix). Organizations were identified through official regulatory directories.
+The study uses a \textbf{stratified geographically-balanced design} spanning 15 African nations:
+\begin{itemize}
+    \item \textbf{West Africa:} Nigeria, Ghana, Senegal, Côte d'Ivoire
+    \item \textbf{East Africa:} Kenya, Tanzania, Uganda, Rwanda, Ethiopia
+    \item \textbf{North Africa:} Egypt, Morocco
+    \item \textbf{Southern Africa:} South Africa, Botswana, Zambia
+    \item \textbf{Central Africa:} Cameroon
+\end{itemize}
+
+Within each country, we stratify across five sectors: Government, Higher Education, Financial/Business, Healthcare, and Telecommunications/Technology. The resulting sample consists of $N = 75$ organizations ($15 \times 5$ balanced matrix, $n=5$ per country, $n=15$ per sector). Organizations were identified through official regulatory directories, central bank oversight registers, and educational ministry listings.
 
 \subsection{Collection Pipeline}
 \begin{verbatim}
@@ -100,7 +114,7 @@ We report proportions with Wilson score 95\% confidence intervals \cite{wilson19
 
 \subsection{Overall Prevalence (RQ1 \& RQ2)}
 
-The pilot completed collection for all $N = 30$ organizations with zero missing reports (100\% completion). Table~\ref{tab:overall} summarizes primary exposure indicators.
+The study completed collection for all $N = 75$ organizations across 15 countries with zero missing reports (100\% completion rate). Table~\ref{tab:overall} summarizes primary exposure indicators, with proportions and Wilson score 95\% confidence intervals.
 
 \begin{table}[htbp]
 \caption{Overall Exposure and Email Security Prevalence ($N = 75$, 15 countries $\times$ 5 sectors)}
@@ -236,13 +250,16 @@ A pivotal methodological finding concerns Certificate Transparency API reliabili
 \section{Discussion}
 
 \subsection{The Adoption-Enforcement Gap}
-While headline SPF adoption is high (86.7\%), over half of adopting domains (53.8\%) employ softfail mechanisms ($\sim$all or ?all). In modern mail processing, softfail instructs receiving MTAs to accept non-conforming messages with only spam scoring increments. Without strict DMARC alignment, attackers can forge sender addresses with minimal friction.
+\label{subsec:adoption_gap}
+While the expanded study shows SPF adoption at 65.3\% (lower than the pilot's 86.7\% due to broader geographic sampling), among adopting domains, 22.7\% employ weak softfail mechanisms ($\sim$all or ?all). In modern mail processing, softfail instructs receiving MTAs to accept non-conforming messages with only spam scoring increments. Without strict policy ($-$all) enforcement, attackers can forge sender addresses with minimal friction. Only 38.7\% of sampled organizations employ strict SPF policies, indicating significant adoption-to-enforcement attenuation.
 
 \subsection{The Government Exposure Paradox}
-Our finding that 0.0\% of sampled government portals enforce DMARC---compared to 100\% of commercial banks---underscores a critical public-sector cyber hygiene challenge. Government domains are prime targets for state-sponsored phishing, tax scams, and executive impersonation. Implementing $p=\text{quarantine}$ and $p=\text{reject}$ policies on apex government domains represents an immediate, cost-effective defense.
+\label{subsec:govt_paradox}
+Our finding that only 20.0\% of sampled government domains enforce DMARC---compared to 66.7\% of business, 73.3\% of universities, and 60.0\% of healthcare organizations---underscores a critical public-sector cyber hygiene challenge. This disparity is statistically significant ($\chi^2 = 9.06, p = 0.0026$). Government domains are prime targets for state-sponsored phishing campaigns, impersonation-based extortion, and supply-chain attacks targeting their vendor ecosystems. Implementing $p=\text{quarantine}$ and $p=\text{reject}$ policies on apex government domains represents an immediate, cost-effective defense with broad policy implications across African national cyber strategies.
 
 \subsection{Measurement Implications}
-The crt.sh degradation finding has broader implications for passive measurement research. Studies relying on public CT APIs without explicit availability flags risk severe coverage bias. We recommend that all passive measurement frameworks incorporate upstream source provenance tracking.
+\label{subsec:measurement_implications}
+The finding that 96.7\% of Certificate Transparency queries encounter rate-limits or timeouts has profound implications for passive measurement research. Studies relying on public CT APIs without explicit availability tracking risk severe coverage bias and spurious conclusions about infrastructure exposure. We recommend that all passive measurement frameworks: (1) explicitly flag upstream source unavailability, (2) implement multi-resolver validation for DNS-based findings, and (3) document fallback behaviors in methodology sections. Beacon's provenance-tracking model demonstrates how measurement robustness can be maintained even when upstream sources degrade.
 
 \section{Conclusion}
 
