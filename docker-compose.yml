@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  # Beacon data collector service
+  collector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: beacon-collector
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./research:/app/research
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_DIR=/app/logs
+      - DATA_DIR=/app/data
+    command: python africa_exposed.py --help
+    # Runs on-demand; remove profiles for always-on behavior
+    profiles:
+      - manual
+
+  # Streamlit dashboard service
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: beacon-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./dashboard:/app/dashboard
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_DIR=/app/logs
+      - DATA_DIR=/app/data
+    working_dir: /app/dashboard
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+    profiles:
+      - manual
+
+  # Research analysis service
+  research:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: beacon-research
+    volumes:
+      - ./research:/app/research
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_DIR=/app/logs
+    working_dir: /app/research
+    command: python analyze_study.py
+    profiles:
+      - manual
+
+  # Optional: PostgreSQL for storing historical results
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: beacon-db
+  #   environment:
+  #     POSTGRES_DB: beacon_research
+  #     POSTGRES_USER: beacon
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+  #   volumes:
+  #     - beacon_db_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   profiles:
+  #     - database
+
+volumes:
+  beacon_db_data:

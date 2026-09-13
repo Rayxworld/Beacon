@@ -1,0 +1,76 @@
+country,country_code,region,sector,organization_id,domain,selection_source,selection_date,authorization_status,notes
+Nigeria,NG,West Africa,government,NG-GOV-001,nigeria.gov.ng,https://www.gov.ng/,2026-09-13,passive-public-research-only,Primary national portal
+Ghana,GH,West Africa,government,GH-GOV-001,ghana.gov.gh,https://www.ghana.gov.gh/,2026-09-13,passive-public-research-only,Government of Ghana portal
+Kenya,KE,East Africa,government,KE-GOV-001,kenya.go.ke,https://www.mygov.go.ke/,2026-09-13,passive-public-research-only,Government of Kenya portal
+South Africa,ZA,Southern Africa,government,ZA-GOV-001,gov.za,https://www.gov.za/,2026-09-13,passive-public-research-only,South African Government
+Egypt,EG,North Africa,government,EG-GOV-001,egypt.gov.eg,https://www.egypt.gov.eg/,2026-09-13,passive-public-research-only,Egyptian Government portal
+Tanzania,TZ,East Africa,government,TZ-GOV-001,tanzania.go.tz,https://www.tanzania.go.tz/,2026-09-13,passive-public-research-only,Government of Tanzania
+Ethiopia,ET,East Africa,government,ET-GOV-001,gov.et,https://www.ethiopia.gov.et/,2026-09-13,passive-public-research-only,Federal Democratic Republic portal
+Cameroon,CM,Central Africa,government,CM-GOV-001,gov.cm,https://www.spm.gov.cm/,2026-09-13,passive-public-research-only,Republic of Cameroon portal
+Rwanda,RW,East Africa,government,RW-GOV-001,gov.rw,https://www.gov.rw/,2026-09-13,passive-public-research-only,Government of Rwanda portal
+Senegal,SN,West Africa,government,SN-GOV-001,gouv.sn,https://www.gouv.sn/,2026-09-13,passive-public-research-only,Government of Senegal
+Uganda,UG,East Africa,government,UG-GOV-001,go.ug,https://www.go.ug/,2026-09-13,passive-public-research-only,Government of Uganda portal
+Zambia,ZM,Southern Africa,government,ZM-GOV-001,gov.zm,https://www.gov.zm/,2026-09-13,passive-public-research-only,Government of Zambia
+Morocco,MA,North Africa,government,MA-GOV-001,gov.ma,https://www.maroc.ma/,2026-09-13,passive-public-research-only,Government of Morocco
+Botswana,BW,Southern Africa,government,BW-GOV-001,gov.bw,https://www.gov.bw/,2026-09-13,passive-public-research-only,Government of Botswana
+Côte d'Ivoire,CI,West Africa,government,CI-GOV-001,gouv.ci,https://www.gouv.ci/,2026-09-13,passive-public-research-only,Government of Côte d'Ivoire
+Nigeria,NG,West Africa,universities,NG-UNI-001,unilag.edu.ng,https://www.nuc.edu.ng/,2026-09-13,passive-public-research-only,University of Lagos
+Ghana,GH,West Africa,universities,GH-UNI-001,ug.edu.gh,https://www.gtec.edu.gh/,2026-09-13,passive-public-research-only,University of Ghana
+Kenya,KE,East Africa,universities,KE-UNI-001,uonbi.ac.ke,https://www.che.ac.ke/,2026-09-13,passive-public-research-only,University of Nairobi
+South Africa,ZA,Southern Africa,universities,ZA-UNI-001,up.ac.za,https://www.dhet.gov.za/,2026-09-13,passive-public-research-only,University of Pretoria
+Egypt,EG,North Africa,universities,EG-UNI-001,cu.edu.eg,https://scu.eg/,2026-09-13,passive-public-research-only,Cairo University
+Tanzania,TZ,East Africa,universities,TZ-UNI-001,udsm.ac.tz,https://www.tcu.go.tz/,2026-09-13,passive-public-research-only,University of Dar es Salaam
+Ethiopia,ET,East Africa,universities,ET-UNI-001,aau.edu.et,https://www.aau.edu.et/,2026-09-13,passive-public-research-only,Addis Ababa University
+Cameroon,CM,Central Africa,universities,CM-UNI-001,univ-yaounde1.cm,https://www.univ-yaounde1.cm/,2026-09-13,passive-public-research-only,University of Yaoundé I
+Rwanda,RW,East Africa,universities,RW-UNI-001,ur.ac.rw,https://www.ur.ac.rw/,2026-09-13,passive-public-research-only,University of Rwanda
+Senegal,SN,West Africa,universities,SN-UNI-001,ugb.sn,https://www.ugb.sn/,2026-09-13,passive-public-research-only,Université Gaston Berger
+Uganda,UG,East Africa,universities,UG-UNI-001,mak.ac.ug,https://www.mak.ac.ug/,2026-09-13,passive-public-research-only,Makerere University
+Zambia,ZM,Southern Africa,universities,ZM-UNI-001,unza.zm,https://www.unza.zm/,2026-09-13,passive-public-research-only,University of Zambia
+Morocco,MA,North Africa,universities,MA-UNI-001,um5.ac.ma,https://www.um5.ac.ma/,2026-09-13,passive-public-research-only,Université Mohamed V
+Botswana,BW,Southern Africa,universities,BW-UNI-001,ub.ac.bw,https://www.ub.ac.bw/,2026-09-13,passive-public-research-only,University of Botswana
+Côte d'Ivoire,CI,West Africa,universities,CI-UNI-001,univ-ci.edu.ci,https://www.univ-ci.edu.ci/,2026-09-13,passive-public-research-only,Université Felix Houphouët-Boigny
+Nigeria,NG,West Africa,business,NG-BUS-001,gtbank.com,https://sec.gov.ng/,2026-09-13,passive-public-research-only,Guaranty Trust Bank
+Ghana,GH,West Africa,business,GH-BUS-001,ecobank.com,https://sec.gov.gh/,2026-09-13,passive-public-research-only,Ecobank Group
+Kenya,KE,East Africa,business,KE-BUS-001,kcbgroup.com,https://www.cma.or.ke/,2026-09-13,passive-public-research-only,KCB Group Limited
+South Africa,ZA,Southern Africa,business,ZA-BUS-001,standardbank.co.za,https://www.jse.co.za/,2026-09-13,passive-public-research-only,Standard Bank South Africa
+Egypt,EG,North Africa,business,EG-BUS-001,nbe.com.eg,https://www.egx.com.eg/,2026-09-13,passive-public-research-only,National Bank of Egypt
+Tanzania,TZ,East Africa,business,TZ-BUS-001,crdbbank.co.tz,https://www.cmsa.go.tz/,2026-09-13,passive-public-research-only,CRDB Bank Tanzania
+Ethiopia,ET,East Africa,business,ET-BUS-001,cbe.com.et,https://www.cbe.com.et/,2026-09-13,passive-public-research-only,Commercial Bank of Ethiopia
+Cameroon,CM,Central Africa,business,CM-BUS-001,bicec.cm,https://www.bicec.cm/,2026-09-13,passive-public-research-only,Bank of Investments and Savings of Cameroon
+Rwanda,RW,East Africa,business,RW-BUS-001,bnr.rw,https://www.bnr.rw/,2026-09-13,passive-public-research-only,Bank of Kigali
+Senegal,SN,West Africa,business,SN-BUS-001,cbao-group.com,https://www.cbao-group.com/,2026-09-13,passive-public-research-only,CBAO Group Senegal
+Uganda,UG,East Africa,business,UG-BUS-001,centaurbank.com,https://www.centaurbank.com/,2026-09-13,passive-public-research-only,Centaur Bank Uganda
+Zambia,ZM,Southern Africa,business,ZM-BUS-001,stanbicbank.co.zm,https://www.stanbicbank.co.zm/,2026-09-13,passive-public-research-only,Stanbic Bank Zambia
+Morocco,MA,North Africa,business,MA-BUS-001,attijariwafa.com,https://www.attijariwafa.com/,2026-09-13,passive-public-research-only,Attijariwafa bank
+Botswana,BW,Southern Africa,business,BW-BUS-001,firstnationalbank.co.bw,https://www.firstnationalbank.co.bw/,2026-09-13,passive-public-research-only,First National Bank Botswana
+Côte d'Ivoire,CI,West Africa,business,CI-BUS-001,bicis.ci,https://www.bicis.ci/,2026-09-13,passive-public-research-only,BICIS Côte d'Ivoire
+Nigeria,NG,West Africa,healthcare,NG-HEA-001,nhia.gov.ng,https://www.gov.ng/,2026-09-13,passive-public-research-only,National Health Insurance Authority
+Ghana,GH,West Africa,healthcare,GH-HEA-001,ghanahealthservice.org,https://www.ghana.gov.gh/,2026-09-13,passive-public-research-only,Ghana Health Service
+Kenya,KE,East Africa,healthcare,KE-HEA-001,knh.or.ke,https://www.mygov.go.ke/,2026-09-13,passive-public-research-only,Kenyatta National Hospital
+South Africa,ZA,Southern Africa,healthcare,ZA-HEA-001,netcare.co.za,https://www.gov.za/,2026-09-13,passive-public-research-only,Netcare Limited
+Egypt,EG,North Africa,healthcare,EG-HEA-001,mohp.gov.eg,https://www.egypt.gov.eg/,2026-09-13,passive-public-research-only,Ministry of Health & Population
+Tanzania,TZ,East Africa,healthcare,TZ-HEA-001,muhas.ac.tz,https://www.tanzania.go.tz/,2026-09-13,passive-public-research-only,Muhimbili University of Health & Allied Sciences
+Ethiopia,ET,East Africa,healthcare,ET-HEA-001,moh.gov.et,https://www.moh.gov.et/,2026-09-13,passive-public-research-only,Ethiopian Ministry of Health
+Cameroon,CM,Central Africa,healthcare,CM-HEA-001,minsante.cm,https://www.minsante.cm/,2026-09-13,passive-public-research-only,Cameroon Ministry of Health
+Rwanda,RW,East Africa,healthcare,RW-HEA-001,moh.gov.rw,https://www.moh.gov.rw/,2026-09-13,passive-public-research-only,Rwanda Ministry of Health
+Senegal,SN,West Africa,healthcare,SN-HEA-001,sante.gouv.sn,https://www.sante.gouv.sn/,2026-09-13,passive-public-research-only,Senegal Ministry of Health
+Uganda,UG,East Africa,healthcare,UG-HEA-001,health.go.ug,https://www.health.go.ug/,2026-09-13,passive-public-research-only,Uganda Ministry of Health
+Zambia,ZM,Southern Africa,healthcare,ZM-HEA-001,moh.gov.zm,https://www.moh.gov.zm/,2026-09-13,passive-public-research-only,Zambia Ministry of Health
+Morocco,MA,North Africa,healthcare,MA-HEA-001,sante.gov.ma,https://www.sante.gov.ma/,2026-09-13,passive-public-research-only,Morocco Ministry of Health
+Botswana,BW,Southern Africa,healthcare,BW-HEA-001,moh.gov.bw,https://www.moh.gov.bw/,2026-09-13,passive-public-research-only,Botswana Ministry of Health
+Côte d'Ivoire,CI,West Africa,healthcare,CI-HEA-001,msp.gouv.ci,https://www.msp.gouv.ci/,2026-09-13,passive-public-research-only,Côte d'Ivoire Ministry of Health
+Nigeria,NG,West Africa,telecom-tech,NG-TEC-001,mtn.ng,https://www.ncc.gov.ng/,2026-09-13,passive-public-research-only,MTN Nigeria
+Ghana,GH,West Africa,telecom-tech,GH-TEC-001,mtn.com.gh,https://nca.org.gh/,2026-09-13,passive-public-research-only,MTN Ghana
+Kenya,KE,East Africa,telecom-tech,KE-TEC-001,safaricom.co.ke,https://www.ca.go.ke/,2026-09-13,passive-public-research-only,Safaricom Limited
+South Africa,ZA,Southern Africa,telecom-tech,ZA-TEC-001,vodacom.co.za,https://www.icasa.org.za/,2026-09-13,passive-public-research-only,Vodacom South Africa
+Egypt,EG,North Africa,telecom-tech,EG-TEC-001,vodafone.com.eg,https://www.tra.gov.eg/,2026-09-13,passive-public-research-only,Vodafone Egypt
+Tanzania,TZ,East Africa,telecom-tech,TZ-TEC-001,vodacom.co.tz,https://www.tcra.go.tz/,2026-09-13,passive-public-research-only,Vodacom Tanzania
+Ethiopia,ET,East Africa,telecom-tech,ET-TEC-001,ethiotelecom.et,https://www.ethiotelecom.et/,2026-09-13,passive-public-research-only,Ethio Telecom
+Cameroon,CM,Central Africa,telecom-tech,CM-TEC-001,orangecameroun.cm,https://www.orangecameroun.cm/,2026-09-13,passive-public-research-only,Orange Cameroon
+Rwanda,RW,East Africa,telecom-tech,RW-TEC-001,mtn.rw,https://www.mtn.rw/,2026-09-13,passive-public-research-only,MTN Rwanda
+Senegal,SN,West Africa,telecom-tech,SN-TEC-001,sonatel.sn,https://www.sonatel.sn/,2026-09-13,passive-public-research-only,Sonatel Senegal
+Uganda,UG,East Africa,telecom-tech,UG-TEC-001,mtn.co.ug,https://www.mtn.co.ug/,2026-09-13,passive-public-research-only,MTN Uganda
+Zambia,ZM,Southern Africa,telecom-tech,ZM-TEC-001,zactel.zm,https://www.zactel.zm/,2026-09-13,passive-public-research-only,ZACTEL Zambia
+Morocco,MA,North Africa,telecom-tech,MA-TEC-001,maroc-telecom.ma,https://www.maroc-telecom.ma/,2026-09-13,passive-public-research-only,Maroc Telecom
+Botswana,BW,Southern Africa,telecom-tech,BW-TEC-001,mascom.bw,https://www.mascom.bw/,2026-09-13,passive-public-research-only,Mascom Botswana
+Côte d'Ivoire,CI,West Africa,telecom-tech,CI-TEC-001,orange-ci.com,https://www.orange-ci.com/,2026-09-13,passive-public-research-only,Orange Côte d'Ivoire

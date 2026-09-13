@@ -1,0 +1,80 @@
+name: Scheduled Regional Study Scans
+
+on:
+  # Run weekly on Sundays at 3 AM UTC
+  schedule:
+    - cron: '0 3 * * 0'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      countries:
+        description: 'Countries to scan (comma-separated codes, or "all")'
+        required: false
+        default: 'all'
+      collect_dns:
+        description: 'Collect DNS records'
+        type: boolean
+        default: true
+      collect_subdomains:
+        description: 'Enumerate subdomains'
+        type: boolean
+        default: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run regional scans
+      env:
+        COUNTRIES: ${{ github.event.inputs.countries || 'all' }}
+        COLLECT_DNS: ${{ github.event.inputs.collect_dns || true }}
+        COLLECT_SUBDOMAINS: ${{ github.event.inputs.collect_subdomains || true }}
+      run: |
+        python -c "
+        import os
+        countries = os.environ.get('COUNTRIES', 'all').split(',')
+        dns_flag = '--dns' if os.environ.get('COLLECT_DNS') == 'true' else ''
+        subdomains_flag = '--subdomains' if os.environ.get('COLLECT_SUBDOMAINS') == 'true' else ''
+        
+        if countries[0].strip() == 'all':
+          countries = ['ng', 'gh', 'ke', 'za', 'eg', 'tz', 'et', 'cm', 'rw', 'sn', 'ug', 'zm', 'ma', 'bw', 'ci']
+        
+        for country in countries:
+          cmd = f'python africa_exposed.py --country {country.strip()} --collect {dns_flag} {subdomains_flag}'
+          print(f'Running: {cmd}')
+          os.system(cmd)
+        "
+
+    - name: Commit and push results
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git diff-index --quiet HEAD || git commit -m "Automated regional scan - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+        git push
+      if: github.event_name == 'schedule'
+
+    - name: Archive results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: regional-scan-results
+        path: data/
+        retention-days: 90
